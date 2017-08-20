@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ultra" rel="stylesheet">
+        </head>
+        <body>
+            
+<div class="container">  
+    <h2 class="text-center">Welcome To Baby Names - <span id="userName"></span></h2>
+    <p class="text-center">View Options Below <button id="click" class="btn btn-danger btn-sm">Not Your Name Click Here!</button></p>
+    <hr>
+    <div class="col-md-4">
+        <h4 class="">View Top Twenty Baby Names Table</h4>
+        <p>See the 20 Most populr babynames</p>
+        <a class="btn btn-primary btn-large" href="info.html">View</a>
+        </div>
+        <div class="col-md-4">
+            <h4 class="">See All Baby Names</h4>
+        <p>View an API for all baby names</p>
+        <a class="btn btn-primary btn-large" href="/baby-names">View</a>
+        </div>
+        <div class="col-md-4">
+        <h4 class="">See Where your Name Ranks</h4>
+        <p>Grab API for a Specific Name</p>
+        <a class="btn btn-primary btn-large" href="yourname.html">View</a>
+        </div>
+        
+        </div>
+<script>
+
+
+    
+$(document).ready(function() {
+        
+      
+    var userName = document.getElementById("userName");
+    $("#click").click(function() {
+ userName.innerHTML = "My bad homie Didnt mean to get your name wrong"
+    })
+      var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if(xmlhttp.readyState == XMLHttpRequest.DONE){
+            //200 means its good like 404 means its bad
+              //alert(JSON.parse(xmlhttp.responseText)[0].name)
+            if (xmlhttp.status === 200){
+                userName.innerHTML = JSON.parse(xmlhttp.responseText)[0].name
+            }
+        }
+    }
+
+    xmlhttp.open('GET', '/views', true);
+    xmlhttp.send()
+    });
+
+    </script>
+
+        </body>

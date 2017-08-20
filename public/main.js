@@ -10,7 +10,7 @@
             //200 means its good like 404 means its bad
             if (xmlhttp.status === 200){
                 var data = JSON.parse(xmlhttp.responseText)
-                for (var x = 0; x < data.length; x++) {
+                for (var x = 1; x <= data.length; x++) {
                     var element = data[x];
                     // Create an empty <tr> element and add it to the 1st position of the table:
                     var row = myTable.insertRow(x)
@@ -39,7 +39,7 @@
         }
     }
 
-    xmlhttp.open('GET', '/baby-names/top-ten', true);
+    xmlhttp.open('GET', '/viewNames', true);
     xmlhttp.send()
 
     // With Jquery

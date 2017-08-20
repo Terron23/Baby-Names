@@ -6,23 +6,25 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ultra" rel="stylesheet">
         </head>
         <body>
             
 <div class="container">
-    <h3 class="text-center">Log In to view Baby Names</h3>
+    <h1 class="text-center">Log In to view Baby Names</h1>
     
     <div class="col-md-4">
-        <!--action="/login" method="Post"-->
+        <!---->
         </div>
-<form  class="col-md-4">
+<form action="/login" method="Post"  class="col-md-4">
     <div class="form-group">
     <label for="email">Username: </label><span style="color:red" id="emailError"></span>
-    <input placeholder="Ex: john@gmail.com"type="email" class="form-control" id="email">
+    <input name="email" placeholder="Ex: john@gmail.com" type="email" class="form-control" id="email">
   </div>
   <div class="form-group">
     <label for="password">Password: </label><span style="color:red" id="pError"></span>
-    <input type="password" class="form-control" id="password">
+    <input name="password" type="password" class="form-control" id="password">
   </div>
   <div class="text-center">
     <label><input type="checkbox"> Remember Me</label> |
@@ -68,10 +70,6 @@ return false;
         return false;
     }
     
-
-    else {
-   alert("Great Job")
-}
 })
 
 

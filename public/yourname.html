@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ultra" rel="stylesheet">
+        </head>
+        <body>
+            
+<div class="container">
+    <h3 class="text-center">See Where your Name Ranks</h3>
+    
+    <div class="col-md-4">
+        <!---->
+        </div>
+<form action="/rank" method="Post"  class="col-md-4">
+    <div class="form-group">
+    <label for="email">Enter Name: </label><span style="color:red" id="emailError"></span>
+    <input name="name" placeholder="First Name Only" type="name" class="form-control" id="email">
+  </div>
+  <div class="text-center">
+      <button type="submit" class="btn btn-default" id="submit">Submit</button></div>
+  
+</form>
+<div class="col-md-4">
+    <!--Column just for centering-->
+        </div>
+</div>
+<script>
+  $(document).ready(function() {
+     
+var email = document.getElementById("email");
+var userError = document.getElementById("emailError");
+var password = document.getElementById("password");
+var userError2 = document.getElementById("pError");
+
+
+
+
+
+});
+</script>
+</body>
+</html>

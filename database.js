@@ -12,6 +12,8 @@ var sq = new sequelize('SSIS', 'terron23', 'kobesmalls23', {
 });
 const sql = require('mssql');
 
+
+
 sq.authenticate()
     .then(function() {
         console.log("Successfully Connected");
@@ -34,6 +36,9 @@ var userTemplate = sq.define('User', {
         type: sequelize.BOOLEAN
     }
 })
+
+
+
 var babyNameTemplate = sq.define('babyNames', {
     birthYear: {
         type: sequelize.INTEGER
@@ -54,9 +59,23 @@ var babyNameTemplate = sq.define('babyNames', {
         type: sequelize.INTEGER
     }
 })
+
+
+var babyNameTemp = sq.define('babyAdd', {
+   
+      
+    name: {
+        type: sequelize.STRING
+    }
+   
+})
+
+
 userTemplate.sync()
 babyNameTemplate.sync()
+babyNameTemp.sync()
 module.exports = {
     User: userTemplate,
-    babyName: babyNameTemplate
+    babyName: babyNameTemplate,
+    babyAdd: babyNameTemp
 }
